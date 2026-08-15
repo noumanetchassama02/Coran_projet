@@ -1,0 +1,14 @@
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:19] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:47] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:47] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:48] "GET /css/style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:48] "GET /js/api.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:48] "GET /js/player.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:48] "GET /icons/icon-192.png HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:48] "GET /js/app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:48] "GET /js/offline.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:49] "GET /sw.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:49] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:49] "GET /manifest.webmanifest HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:49] "GET /icons/icon-512.png HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [15/Aug/2026 11:03:50] "GET /icons/maskable-512.png HTTP/1.1" 200 -

@@ -1,0 +1,13 @@
+{
+  "appId": "tg.coran.app",
+  "appName": "Coran",
+  "webDir": "www",
+  "backgroundColor": "#0B3D2E",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#0B3D2E"
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
