@@ -674,12 +674,15 @@ main { flex: 1 1 auto; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: .8rem;
+  gap: .6rem .8rem;
   padding: .78rem .9rem;
   border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 
 .set-row:last-child { border-bottom: none; }
+
+.set-row > div:first-child { flex: 1 1 auto; min-width: 0; }
 
 .set-row .label { font-size: .92rem; font-weight: 500; }
 .set-row .desc { font-size: .74rem; color: var(--muted); margin-top: .1rem; }
@@ -690,9 +693,11 @@ main { flex: 1 1 auto; }
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 9px;
-  padding: .4rem .5rem;
+  padding: .45rem .55rem;
   font-size: .84rem;
-  max-width: 55%;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Interrupteur */
@@ -725,21 +730,53 @@ main { flex: 1 1 auto; }
 .switch input:checked + .track::after { transform: translateX(20px); }
 
 /* Boutons A-/A+ */
-.font-size-control { display: flex; align-items: center; gap: .5rem; }
+.font-size-control {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
-.font-size-control button {
-  width: 36px;
-  height: 36px;
+#fs-down, #fs-up {
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface-2);
   font-weight: 700;
   font-size: 1rem;
   transition: background .12s ease;
+  flex: none;
 }
 
-.font-size-control button:hover { background: var(--border); }
+#fs-down:hover, #fs-up:hover { background: var(--border); }
 .font-size-control .val { font-size: .8rem; color: var(--muted); min-width: 44px; text-align: center; }
+
+/* Boutons segmentés des réglages (thème, affichage des versets) — dimensionnés au contenu */
+.theme-btn {
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: .45rem .65rem;
+  min-height: 40px;
+  white-space: nowrap;
+  transition: background .12s ease, color .12s ease, border-color .12s ease;
+}
+
+.theme-btn:hover { background: var(--border); color: var(--ink); }
+
+.theme-btn.is-sel {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--gold);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
+}
 
 /* Téléchargements */
 .dl-list { padding: .3rem .9rem .7rem; display: grid; gap: .45rem; }
@@ -762,8 +799,8 @@ main { flex: 1 1 auto; }
 
 .dl-play {
   flex: none;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -773,7 +810,8 @@ main { flex: 1 1 auto; }
 }
 
 .dl-play:hover { filter: brightness(1.1); transform: scale(1.07); }
-.dl-play svg { width: 15px; height: 15px; margin-left: 2px; }
+.dl-play:active { transform: scale(.94); }
+.dl-play svg { width: 16px; height: 16px; margin-left: 2px; }
 
 .dl-info { flex: 1 1 auto; min-width: 0; display: grid; gap: 1px; }
 
@@ -796,8 +834,8 @@ main { flex: 1 1 auto; }
 
 .dl-del {
   color: var(--muted);
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -806,7 +844,8 @@ main { flex: 1 1 auto; }
 }
 
 .dl-del:hover { color: var(--danger); background: var(--surface); }
-.dl-del svg { width: 15px; height: 15px; }
+.dl-del:active { transform: scale(.94); }
+.dl-del svg { width: 16px; height: 16px; }
 
 /* Badge « Hors ligne » sur les cartes de sourates */
 .offline-badge {
@@ -870,6 +909,9 @@ main { flex: 1 1 auto; }
 
 .about-dev { font-size: .8rem; color: var(--muted); margin-top: .15rem; }
 .about-dev .dev-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
   color: var(--primary);
   font-weight: 700;
   text-decoration: underline;
@@ -877,7 +919,10 @@ main { flex: 1 1 auto; }
   text-decoration-color: color-mix(in srgb, var(--primary) 45%, transparent);
   transition: color .15s ease, text-decoration-color .15s ease;
 }
+.about-dev .dev-link svg { width: 15px; height: 15px; color: #25D366; flex: none; }
 .about-dev .dev-link:hover { color: var(--gold); text-decoration-color: var(--gold); }
+
+
 
 .about-credit {
   font-size: .7rem;

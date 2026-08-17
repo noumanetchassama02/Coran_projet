@@ -5,7 +5,7 @@
    - Fonctionnement hors ligne
    ============================================= */
 
-const SHELL_CACHE = 'coran-shell-v12';
+const SHELL_CACHE = 'coran-shell-v16';
 const API_CACHE = 'coran-api-v1';
 
 const SHELL_ASSETS = [

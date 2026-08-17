@@ -60,6 +60,7 @@ const APP_DEV_WHATSAPP = 'https://wa.me/22893442688';
 const APP_DEV_EMAIL = 'contact@agri-togo.tg';
 const APP_DEV_WEBSITE = 'https://devnooma-tech.com';
 const APP_DEV_WHATSAPP_MSG = 'Salam, besoin de renseignements sur vos services de développement';
+const APP_DEV_WHATSAPP_URL = `${APP_DEV_WHATSAPP}?text=${encodeURIComponent(APP_DEV_WHATSAPP_MSG)}`;
 
 /* ---------- Icônes SVG ---------- */
 const IC = {
@@ -616,7 +617,7 @@ function renderSettings() {
           <div><div class="label">Thème</div><div class="desc">Suit l’appareil en mode Auto</div></div>
           <div class="font-size-control">
             ${['light', 'dark', 'auto'].map((t) => `
-              <button data-theme-val="${t}" class="theme-btn ${d.theme === t ? 'is-sel' : ''}" style="font-size:.78rem;border-color:${d.theme === t ? 'var(--gold)' : 'var(--border)'}">${themeLabels[t]}</button>`).join('')}
+              <button data-theme-val="${t}" class="theme-btn ${d.theme === t ? 'is-sel' : ''}">${themeLabels[t]}</button>`).join('')}
           </div>
         </div>
         <div class="set-row">
@@ -644,7 +645,7 @@ function renderSettings() {
         <div class="set-row">
           <div><div class="label">Affichage des versets</div><div class="desc">La lecture phonétique aide à réciter sans connaître l’arabe</div></div>
           <div class="font-size-control">
-            ${VERSE_MODES.map((m) => `<button data-mode-val="${m.id}" class="theme-btn ${d.verseMode === m.id ? 'is-sel' : ''}" style="font-size:.72rem;border-color:${d.verseMode === m.id ? 'var(--gold)' : 'var(--border)'}">${m.label}</button>`).join('')}
+            ${VERSE_MODES.map((m) => `<button data-mode-val="${m.id}" class="theme-btn ${d.verseMode === m.id ? 'is-sel' : ''}">${m.label}</button>`).join('')}
           </div>
         </div>
       </section>
@@ -668,7 +669,7 @@ function renderSettings() {
           <img src="icons/icon-192.png" alt="Logo de l'application Coran" width="46" height="46" class="about-logo">
           <div class="about-brand-text">
             <div class="about-app">Application Coran <span class="badge-version">v${APP_VERSION}</span></div>
-            <div class="about-dev">Développée par <a class="dev-link" href="mailto:${APP_DEV_EMAIL}">${esc(APP_DEV)}</a></div>
+            <div class="about-dev">Développée par <a class="dev-link" href="${APP_DEV_WHATSAPP_URL}" aria-label="Contacter Nooma_Tech sur WhatsApp au +228 93 44 26 88">${IC.whatsapp}${esc(APP_DEV)}</a></div>
           </div>
         </div>
         <p class="about-note">
